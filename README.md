@@ -18,119 +18,132 @@ STEP 4:Apply the various data visualization tools wherever necessary.
 STEP 5:Include Necessary parameters in each functions.
 
 # Coding and Output:
-```
-import matplotlib.pyplot as plt
-x_values=[0,1,2,3,4,5]
-y_values=[0,1,4,9,16,25]
-plt.plot(x_values,y_values)
-plt.show()
-```
-![Screenshot 2024-05-04 090705](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/30e9f541-c170-42df-82e3-b1643cc8898d)
 
 ```
+import pandas as pd
+import numpy as np
+import seaborn as sns
 import matplotlib.pyplot as plt
-x=[1,2,3]
-y=[2,4,1]
-plt.plot(x,y)
-plt.xlabel('x-axis')
-plt.ylabel("y-axis")
-plt.title('My first grpah!')
-plt.show()
 ```
-![Screenshot 2024-05-04 090714](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/f3588270-037c-4db1-b08e-e8c6001dc90f)
+
+## Line Plot:
 
 ```
-import matplotlib.pyplot as plt
-x1=[1,2,3]
-y1=[2,4,1]
-plt.plot(x1,y1,label='line 1')
-x2=[1,2,3]
-y2=[4,1,3]
-plt.plot(x2,y2,label='line 2')
-plt.xlabel('x-axis')
-plt.ylabel('y-axis')
-plt.title("two lines on same grapg!")
+marks=[13,45,63,78]
+student=['ABC','QOR','EFB','TOB']
+plt.plot(marks,student)
+plt.xlabel('Marks')
+plt.ylabel('Student name')
+plt.show()
+
+student=['A','B','C','D']
+attendence=[90,85,73,88]
+plt.plot(attendence,student)
+plt.xlabel('Attendence')
+plt.ylabel('Student name')
+plt.show()
+```
+![image](https://github.com/Sriram8452/EXNO-5-DS/assets/118708032/915713f5-50b1-4013-8037-3a9cc599f291)
+
+## Scatter Plot:
+
+```
+x=[10,20,30,40,50]
+y=[100,200,300,400,500]
+plt.scatter(x,y,label='stars',color='green',marker='*',s=30)
+plt.show()
+
+x=np.arange(0,15)
+y=np.arange(0,15)
+x
+y
+plt.scatter(x,y,c='r')
+plt.xlabel('X axis')
+plt.ylabel('y axis')
+plt.title('Scatter plot')
+plt.show()
+```
+![image](https://github.com/Sriram8452/EXNO-5-DS/assets/118708032/7fab8701-3aee-4b5a-b729-cb82a6c2dd16)
+
+## Pie Chart:
+
+```
+act=['eat','sleep','work','play']
+slices=[3,7,8,6]
+color=['r','y','g','b']
+plt.pie(slices,labels=act,colors=color,startangle=90,shadow=True,explode=(0.1,0.1,0.1,0.1),radius=1.2,autopct='%1.1f%%')
+plt.legend()
+plt.show()
+
+feedback=['Good','excellent','Perfect','Ok']
+slices=[4,10,3,8]
+color=['y','r','b','g']
+plt.pie(slices,labels=feedback,colors=color,startangle=90,shadow=True,explode=(0.1,0.1,0.1,0.1),radius=1.2,autopct='%1.1f%%')
 plt.legend()
 plt.show()
 ```
-![Screenshot 2024-05-04 090722](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/aaa5b396-1492-478e-ab54-8166cc778fff)
+![image](https://github.com/Sriram8452/EXNO-5-DS/assets/118708032/a16d81be-4162-41f0-ba84-7d43883c3248)
+
+## Area Chart:
 
 ```
-import matplotlib.pyplot as plt
-import numpy as np
-x=[1,2,3,4,5]
-y1=[10,12,14,16,18]
-y2=[5,7,9,11,13]
-y3=[2,4,6,8,10]
-plt.fill_between(x,y1,color='blue')
-plt.fill_between(x,y2,color='green')
-```
-![Screenshot 2024-05-04 090730](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/ee1784f8-1d73-41c1-b4b4-cd74107b5294)
-
-```
-plt.stackplot(x,y1,y2,y3,labels=['line1','line2','line3'])
-plt.legend(loc='upper left')
-plt.title('stacked line chart')
-plt.xlabel('x-axis')
-plt.ylabel('y-axis')
+x = [1, 2, 3, 4, 5]
+y1 = [10, 12, 14, 16, 18]
+y2 = [5, 7, 9, 11, 13]
+y3 = [2, 4, 6, 8, 10]
+plt.fill_between(x, y1, color='blue')
+plt.fill_between(x, y2, color='green')
+plt.plot(x, y1, color='red')
+plt.plot(x, y2, color='black')
+plt.legend(['y1','y2'])
 plt.show()
 ```
-![Screenshot 2024-05-04 090739](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/bb7f11dc-d884-41ef-9561-bb6ae87994fd)
+![image](https://github.com/Sriram8452/EXNO-5-DS/assets/118708032/9d90b6c9-70ac-4f52-bec1-975fafa4afc7)
+
+## Bar Chart:
 
 ```
-import numpy as np
-import matplotlib.pyplot as plt
-values=[5,6,3,7,2]
-names=["A","B","C","D","E"]
-plt.bar(names,values,color='green')
+height = [10, 24, 36, 40, 5]
+names = ['one', 'two', 'three', 'four', 'five']
+c1=['red', 'green'] 
+c2=['b', 'g']
+plt.bar (names, height, width=0.8, color=c1)
+plt.xlabel('x - axis')
+plt.ylabel('y - axis')
+plt.title('My bar chart!')
 plt.show()
 ```
-![Screenshot 2024-05-04 090746](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/25e437eb-08d1-4a52-966e-348702bcf84c)
+![image](https://github.com/Sriram8452/EXNO-5-DS/assets/118708032/6685a45c-7ed2-44c4-8730-3a2e55acf7e3)
+
+## Histogram:
 
 ```
-import matplotlib.pyplot as plt
-import numpy as np
-
-ages=[2,5,70,40,30,45,50,45,43,40,44,60,7,13,57,18,90,77,32,21,20,40]
-range = (0, 100)
-bins=10
-plt.hist(ages,bins,range,color='green',histtype='bar',rwidth=0.8)
-plt.xlabel('age')
-plt.ylabel('no of people')
-plt.title('histogram')
+x = [2,1,6,4,2,4,8,9,4,2,4,10,6,4,5,7,7,3,2,7,5,3,5,9,2,1]
+plt.hist(x, bins = 10, color='blue', alpha=0.5)
 plt.show()
 ```
-![Screenshot 2024-05-04 090756](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/9654fb4b-87d7-4898-98f9-85bd41c592f6)
+![image](https://github.com/Sriram8452/EXNO-5-DS/assets/118708032/c7d07305-db41-438c-8585-81346fead120)
+
+## Box Plot:
 
 ```
-import matplotlib.pyplot as plt
-import numpy as np
 np.random.seed(0)
-data=np.random.normal(loc=0,scale=1,size=100)
+data=np.random.normal(loc=0, scale=1, size=100)
 data
 ```
-![Screenshot 2024-05-04 090805](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/b7c7a258-5d38-4395-b128-e0382454afbb)
+![image](https://github.com/Sriram8452/EXNO-5-DS/assets/118708032/1073572a-2c3a-487c-a1b8-efdbc595ac91)
 
 ```
-fig,ax=plt.subplots()
+fig, ax= plt.subplots()
 ax.boxplot(data)
-ax.set_xlabel("data")
-ax.set_ylabel("values")
-ax.set_title("box plot")
+ax.set_xlabel('Data')
+ax.set_ylabel('Values')
+ax.set_title('Box Plot')
 ```
-![Screenshot 2024-05-04 090814](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/909124d3-b53e-4100-b660-bae565df861e)
+![image](https://github.com/Sriram8452/EXNO-5-DS/assets/118708032/3e04e28b-5a0e-412e-ad52-ecda68c69561)
 
-```
-import matplotlib.pyplot as plt
-activities=['eat','sleep','work','play']
-slices=[3,7,8,6]
-colors=['r','y','g','b']
-plt.pie(slices,labels = slices,colors=colors,startangle=90,shadow = True,explode = (0,0,0.1,0),radius=1.2,autopct='%1.1f%%')
-plt.legend()
-plt.show()
-```
-![Screenshot 2024-05-04 090823](https://github.com/Harsayazheni/Expt05-Introduction-to-Data-Science/assets/118708467/ead7a686-92a6-4a1a-80c5-e789ab8e0e05)
 
 
 # Result:
-The Data Visualization using matplot python library is implemented successfully.
+
+Thus, all the data visualization techniques of matplotlib has been implemented.
